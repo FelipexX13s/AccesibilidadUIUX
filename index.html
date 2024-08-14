@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <!-- 3.1.2. Maquetación y regiones -->
+    <header>
+        <nav class="nav"> 
+            <!-- 4.5. Imágenes de texto -->
+            <img src="./styles/logo.png" alt="Logo" class="nav-logo">
+            <h2 class="nav-title">La Galería de Arte</h2>
+            <a class="nav__link" href="index.html">Registro</a>
+            <a class="nav__link" href="galeria.html">Galería</a>
+            <button class="accessibility-toggle">Accesibilidad</button> <!-- Botón de accesibilidad -->
+            <div class="accessibility-menu">
+                <!-- 3.2. 3.3. Características sensoriales -->
+                <button aria-label="Aumentar tamaño" onclick="resizeText('increase')">Aumentar Tamaño</button>
+                <button aria-label="Disminuir tamaño" onclick="resizeText('decrease')">Disminuir Tamaño</button>
+                <button aria-label="Aumentar espaciado" onclick="resizeLetterSpacing('increase')">Aumentar Espaciado</button>
+                <button aria-label="Disminuir espaciado" onclick="resizeLetterSpacing('decrease')">Disminuir Espaciado</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- 4.1. Uso del color -->
+        <h1>Registro</h1>
+        <div class="contenedor__form">
+            <!-- 3.1.3. Uso correcto de los encabezados -->
+            <form id="registrationForm" action="/submit-form" method="POST" onsubmit="return validateForm()">               
+                 <div class="container">
+                    <!-- 3.2. Orden adecuado -->
+                    <div class="column">
+                        <label for="nombre">Nombres:</label><br>
+                        <!-- 3.5. Identificar el propósito de entrada -->
+                        <input type="text" id="nombre" name="nombre" required><br><br>
+        
+                        <label for="telefono">Teléfono:</label><br>
+                        <input type="tel" id="telefono" name="telefono" required><br><br>
+                    </div>
+                    <div class="column">
+                        <label for="apellidos">Apellidos:</label><br>
+                        <input type="text" id="apellidos" name="apellidos" required><br><br>
+        
+                        <label for="email">Correo Electrónico:</label><br>
+                        <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@gmail\.com" title="Formato de correo inválido. Debe ser @gmail.com" required><br><br>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button type="reset" aria-label="Cancelar registro">Cancelar</button>
+                    <button type="submit" aria-label="Aceptar registro">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>Desarrollado por Juan Rodriguez, Felipe Rodriguez y Juan Alvarez</p>
+    </footer>
+
+    <script>
+        var currentFontSize = 1; // Tamaño de texto inicial en rem
+        var currentLetterSpacing = 0; // Espaciado de letras inicial en px
+
+        function resizeText(action) {
+            if (action === 'increase') {
+                currentFontSize += 0.1;
+            } else if (action === 'decrease') {
+                currentFontSize = Math.max(0.5, currentFontSize - 0.1); // Evita un tamaño de fuente menor a 0.5rem
+            }
+
+            document.body.style.fontSize = currentFontSize + 'rem';
+
+            // Actualiza todos los elementos que heredan el tamaño de fuente
+            var elements = document.querySelectorAll('.nav a, .resize-buttons button, h1, h2, p, label');
+            elements.forEach(element => {
+                element.style.fontSize = currentFontSize + 'rem';
+            });
+        }
+
+        function validateForm() {
+            var email = document.getElementById('email');
+            var form = document.getElementById('registrationForm');
+            var isValid = true;
+
+            // Limpia el borde rojo previo
+            email.classList.remove('error');
+
+            // Valida el campo de correo electrónico
+            if (!email.value || !email.checkValidity()) {
+                alert('Por favor, ingrese un correo electrónico válido en el formato @gmail.com.');
+                email.classList.add('error');
+                isValid = false;
+            }
+
+            return isValid; // Evita el envío del formulario si no es válido
+        }
+
+        function resizeLetterSpacing(action) {
+            if (action === 'increase') {
+                currentLetterSpacing += 1;
+            } else if (action === 'decrease') {
+                currentLetterSpacing = Math.max(0, currentLetterSpacing - 1); // Evita un espaciado negativo
+            }
+
+            // Aplica el espaciado de letras a todos los elementos
+            var elements = document.querySelectorAll('.nav a, .resize-buttons button, h1, h2, p, label');
+            elements.forEach(element => {
+                element.style.letterSpacing = currentLetterSpacing + 'px';
+            });
+        }
+
+        // Mostrar/Ocultar el menú de accesibilidad
+        document.querySelector('.accessibility-toggle').addEventListener('click', function() {
+            var menu = document.querySelector('.accessibility-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>

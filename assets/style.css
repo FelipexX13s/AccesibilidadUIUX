@@ -1,0 +1,362 @@
+body {
+    color: #404040;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    /*4.3. Contraste mínimo*/
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+}
+
+.nav a, .buttons button, h1, h2, p, label, input, textarea, select {
+    font-size: inherit; /* Hereda el tamaño de fuente del body */
+}
+
+.div button
+{
+    font-size: inherit; /* Hereda el tamaño de fuente del body */
+}
+
+.nav__link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav__link:hover {
+    background-color: #575757;
+}
+
+main {
+    /* 3.4. Orientación, 4.6. Reajuste*/ 
+    padding: 2rem;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contenedor__form {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.column {
+    flex: 1;
+}
+
+label {
+    color: #404040;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    /*4.7. Contraste para elementos gráficos*/
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button[type="reset"] {
+    background-color: #dc3545;
+}
+
+.resize-buttons button {
+    background-color: #6c757d;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem; /* Tamaño base */
+}
+
+
+.resize-buttons button:hover {
+    background-color: #5a6268;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button[type="reset"]:hover {
+    background-color: #c82333;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+.resize-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.resize-buttons button:hover {
+    background-color: #5a6268;
+}
+
+.imagen {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Contenedor del video y la transcripción */
+.video-transcripcion-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas más pequeñas */
+    gap: 20px; /* Espacio entre las columnas */
+    margin: 20px auto; /* Centra el contenedor y agrega espacio arriba y abajo */
+    max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+}
+
+/* Contenedor del video */
+.video-container {
+    position: relative;
+    width: 100%; /* Ocupa el ancho disponible */
+    max-width: 840px; /* Ajusta el ancho máximo del contenedor del video */
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    background-color: #000; /* Fondo negro para el área del video */
+}
+
+/* Estilo del iframe */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Contenedor de la transcripción */
+.transcripcion {
+    width: 100%; /* Ocupa el ancho disponible */
+    max-width: 600px; /* Ajusta el ancho máximo del contenedor de la transcripción */
+    padding: 20px;
+    background-color: #f4f4f4; /* Fondo claro para la transcripción */
+    border-radius: 8px; /* Bordes redondeados */
+    max-height: 600px; /* Altura máxima para la transcripción */
+    overflow-y: auto; /* Desplazamiento vertical si es necesario */
+}
+
+/* Título del video */
+.video-transcripcion-title {
+    width: 100%;
+    text-align: center;
+    font-size: inherit;
+    font-weight: bold;
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+
+.video {
+    margin-bottom: 1rem;
+}
+
+.transcripcion {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    color: #343a40;
+}
+
+.transcripcion p {
+    margin-bottom: 0.5rem;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Crea una cuadrícula fluida */
+    gap: 16px; /* Espacio entre las imágenes */
+    margin: 2rem 0; /* Separación respecto a otros elementos */
+}
+
+.gallery-item {
+    position: relative; /* Necesario para posicionar el overlay */
+    overflow: hidden; /* Asegura que la imagen no salga de su contenedor */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave para el enfoque */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra alrededor de las imágenes */
+}
+
+.gallery-item img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 100%; /* Asegura que la imagen ocupe todo el alto del contenedor */
+    object-fit: cover; /* Ajusta la imagen al contenedor sin distorsionarla */
+    display: block;
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0; /* Inicia invisible */
+    transition: opacity 0.3s ease; /* Transición suave */
+    border-radius: 0 0 8px 8px; /* Coincide con el borde de la imagen */
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1; /* Muestra el título cuando se pasa el mouse */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la imagen seleccionada */
+    z-index: 1; /* Asegura que la imagen enfocada esté al frente */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte para la imagen enfocada */
+}
+
+.gallery-item:not(:hover) {
+    opacity: 0.7; /* Reduce la opacidad de las imágenes que no están seleccionadas */
+}
+
+
+
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+.gallery-logo {
+    width: 50%; /* Reducido al 50% del tamaño original */
+    max-width: 300px; /* Ancho máximo para la imagen */
+    height: auto;
+    margin-top: 1rem;
+}
+
+/* Título de la galería fijo en tamaño */
+.gallery-header h1 {
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+    /* Para que el tamaño del título no se ajuste con el botón */
+}
+
+
+.nav-logo {
+    width: 50px; /* Ajusta el tamaño del logo como desees */
+    height: auto;
+    margin-right: 1rem; /* Espacio entre el logo y los enlaces */
+}
+
+.accessibility-menu {
+    display: none; /* Ocultar el menú por defecto */
+    position: absolute;
+    top: 50px; /* Ajustar la posición según sea necesario */
+    left: 10px; /* Ajustar la posición según sea necesario */
+    background-color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.accessibility-menu button {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.h4 
+{
+    color: #ffffff;
+}
+
+/* Añadir estos estilos al archivo CSS existente */
+
+.nav-title {
+    color: white;
+    margin: 0 1rem; /* Ajusta el espacio según sea necesario */
+    font-size: 1.5rem; /* Ajusta el tamaño del texto según sea necesario */
+}
+
+.error {
+    border-color: red;
+}

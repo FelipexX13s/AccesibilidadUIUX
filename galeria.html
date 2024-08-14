@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav"> 
+            <img src="./styles/logo.png" alt="Logo" class="nav-logo">
+            <h2 class="nav-title">La Galería de Arte</h2>            
+            <a class="nav__link" href="index.html">Registro</a>
+            <a class="nav__link" href="galeria.html">Galería</a>
+            <button class="accessibility-toggle">Accesibilidad</button> <!-- Botón de accesibilidad -->
+            <div class="accessibility-menu">
+                <!-- 3.1.1. Etiquetas semánticas, 4.4. Cambio de tamaño del texto, 4.8. Espaciado del texto -->
+                <button aria-label="Aumentar tamaño" onclick="resizeText('increase')">Aumentar Tamaño</button>
+                <button aria-label="Disminuir tamaño" onclick="resizeText('decrease')">Disminuir Tamaño</button>
+                <button aria-label="Aumentar espaciado" onclick="resizeLetterSpacing('increase')">Aumentar Espaciado</button>
+                <button aria-label="Disminuir espaciado" onclick="resizeLetterSpacing('decrease')">Disminuir Espaciado</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="gallery-header">
+            <img src="./styles/logo.png" alt="Logo de la Galería" class="gallery-logo">
+            <h1>Galería</h1>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <!-- 1.1. Contenido no textual -->
+                <img src="./styles/MonaLisaBotero.jpg" alt="Cuadro de La Mona Lisa de Botero por Fernando Botero">
+                <!-- 4.9. Visualización de contenido al hacer hover o focus -->
+                <div class="overlay">La Mona Lisa - Fernando Botero</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./styles/sonidosColombia.png" alt="Cuadro de Sonidos de Colombia por Carlos Rangel">
+                <div class="overlay">Sonidos de Colombia - Carlos Rangel</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./styles/guitarrista.jpg" alt="Cuadro de Guitarrista por Alfonso Ferrero">
+                <div class="overlay">Guitarrista - Alfonso Ferrero</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./styles/lagoCisnes.jpg" alt="Cuadro de Lago de los Cisnes por Carlos Imbacuan">
+                <div class="overlay">Lago de los Cisnes - Carlos Imbacuan</div>
+            </div>
+        </div>
+
+        <div class="video-transcripcion-container">
+            <h2 class="video-transcripcion-title">Historia del Arte Colombiano</h2>
+            <div class="video-content">
+                <div class="video-container">
+                    <!-- 2.2. Multimedia, 4.2. Control del audio -->
+                    <iframe src="https://www.youtube.com/embed/VH0XQjutKCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <!-- 2.1. Solo audio o solo video -->
+                <div class="transcripcion">
+                    <h3>Transcripción del Video</h3>
+                    <p>Este programa es financiado a través de los recursos del fondo para el desarrollo de la televisión y los contenidos de la autoridad nacional de televisión.</p>
+
+                    <p>[Aplausos]</p>
+
+                    <p>Porque esté pasando que usted examen y departamento, esto es cronografía.</p>
+
+                    <p>A inicios de la pintura en Colombia, aunque casi toda la pintura prehispánica en Colombia fue hecha sobre cerámica, también estuvo presente en paredes, bóvedas y estatuas. La cerámica decorada fue obra de los quimbayas, chipsets, tayronas y calimas, así como de los habitantes del litoral atlántico, donde se encontró la primera cerámica de América. Los indígenas produjeron piezas que han sido identificadas como las primeras obras de artes plásticas en nuestro territorio. Los bloques de oro que fueron moldeados a mano y transformados en adornos y estatuas para venerar a los dioses, y la piedra tallada como la de San Agustín en Huila, también fueron los primeros pasos de las artes plásticas colombianas.</p>
+
+                    <p>Y saben cuáles municipios de Colombia se centró el arte plástico del siglo 16? En un municipio, yo creería que el epicentro del arte plástico durante el siglo 16 fue Tunja, mientras que Santafé de Bogotá fue el centro artístico entre el 17 y 18. Dentro de los pintores coloniales más reconocidos estuvo Gregorio Vázquez de Arce y Zeballos, creador de más de 500 obras durante el siglo 18. Se creó la escuela de dibujo dirigida por Salvador Rizzo, que fue la primera escuela de arte en Colombia.</p>
+
+                    <p>Con la comisión coreográfica encomendado a Agustín Codazzi en 1850, el arte empezó a desplazar su foco de atención de la religión para ubicarlo en los avances científicos. Pintores como Manuel María Pace realizaron la parte pictórica del atlas geográfico e histórico de la República de Colombia.</p>
+
+                    <p>Históricamente, podríamos decir que los artistas son aquellas personas llamadas a estar a la vanguardia, a especular o a producir aquello que aún no entendemos o reconocemos. Y entonces, en el buen sentido de la palabra, el arte es importante porque está pensando en situaciones con posibilidades que nos permitan encontrar las formas de sargentos.</p>
+
+                    <p>1886 fue uno de los años más relevantes para la historia colombiana. En ese año se abrió la Escuela Nacional de Bellas Artes, que se encargó de la promoción de todos los artistas que estaban en pleno auge. El trabajo del pintor y dibujante bogotano Alberto Urdaneta fue transgresor. Su pintura cargada de crítica social y política le valieron años de prisión y un destierro temporal, mostrando lo que le producía la realidad del país de la segunda mitad del siglo 19.</p>
+
+                    <p>Después del planeta y gracias al trabajo en la Escuela Nacional de Bellas Artes, otros artistas bogotanos alcanzaron un reconocimiento en las áreas de la pintura, específicamente del retrato.</p>
+
+                    <p>[Música]</p>
+
+                    <p>Pues me sé muchos de los artistas y se producían imágenes plásticas, eso artísticas para parar y difundirlas las ideas.</p>
+
+                    <p>Los años finales del siglo 19 se encontraron con una transición artística entre la religiosidad y el modernismo. Lo moderno fue todo aquello que empezó a romper los límites del costumbrismo para tocar los del impresionismo. Uno de los representantes de esa transición fue el bogotano Andrés de Santamaría, quien volvió a Colombia para impregnar todo el panorama artístico de 1896 con sus nuevas influencias. Santamaría fue también el precursor del paisajismo en Colombia y creó que el arte es muy valioso porque además de producir conocimiento de esa cultura, es como un buen incentivo o una buena herramienta para encontrarnos con este movimiento.</p>
+
+                    <p>La pintura comenzó a encontrar una expresión de lo propio, con lo cual el nacionalismo se mezclaba con el movimiento pictórico, realizando la realidad de Colombia, la representación de los ríos, los valles y las montañas. Fernando Botero es considerado el artista vivo latinoamericano más reconocido y cotizado del mundo.</p>
+
+                    <p>Creo que como jóvenes a veces nos olvidamos de la historia y del arte y de la cultura colombiana. Entonces me parece en su persona que un espacio que promueva su perfil, canales para un público juvenil.</p>
+
+                    <p>Este programa fue financiado a través de los recursos del fondo para el desarrollo de la televisión y los contenidos de la autoridad nacional de televisión.</p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Desarrollado por Juan (Rodríguez^2 + Álvarez)</p>
+    </footer>
+
+    <script>
+        var currentFontSize = 1; // Tamaño de texto inicial en rem
+        var currentLetterSpacing = 0; // Espaciado de letras inicial en px
+
+        function resizeText(action) {
+            if (action === 'increase') {
+                currentFontSize += 0.1;
+            } else if (action === 'decrease') {
+                currentFontSize = Math.max(0.5, currentFontSize - 0.1); // Evita un tamaño de fuente menor a 0.5rem
+            }
+
+            document.body.style.fontSize = currentFontSize + 'rem';
+
+            // Actualiza todos los elementos que heredan el tamaño de fuente
+            var elements = document.querySelectorAll('.nav a, .resize-buttons button, h1, h2, p, label');
+            elements.forEach(element => {
+                element.style.fontSize = currentFontSize + 'rem';
+            });
+        }
+
+        function resizeLetterSpacing(action) {
+            if (action === 'increase') {
+                currentLetterSpacing += 1;
+            } else if (action === 'decrease') {
+                currentLetterSpacing = Math.max(0, currentLetterSpacing - 1); // Evita un espaciado negativo
+            }
+
+            // Aplica el espaciado de letras a todos los elementos
+            var elements = document.querySelectorAll('h1, h2, p, label');
+            elements.forEach(element => {
+                element.style.letterSpacing = currentLetterSpacing + 'px';
+            });
+        }
+
+        // Mostrar/Ocultar el menú de accesibilidad
+        document.querySelector('.accessibility-toggle').addEventListener('click', function() {
+            var menu = document.querySelector('.accessibility-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>
